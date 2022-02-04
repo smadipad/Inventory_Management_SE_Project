@@ -6,6 +6,7 @@ import (
     "net/http"
     "gorm.io/gorm"
     "encoding/json"
+    "github.com/gorilla/mux"
 )
 import "gorm.io/driver/sqlite"
 type Orders struct{
@@ -41,7 +42,7 @@ func getAllCustomerOrders(w http.ResponseWriter, r *http.Request){
 		sendErr(w, http.StatusInternalServerError, err.Error())
 		return
 	}
-	err = json.NewEncoder(w).Encode(orders)
+	e = json.NewEncoder(w).Encode(orders)
 	if e != nil {
 		sendErr(w, http.StatusInternalServerError, err.Error())
 	}
@@ -58,9 +59,16 @@ func getAllCustomerOrders(w http.ResponseWriter, r *http.Request){
 
 func getCustomerOrderByID(w http.ResponseWriter, r *http.Request){
     var order Orders
-    db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
-    data,_:= json.Marshal(&order)
-    fmt.Fprint(w, string(data))
+    // db.Raw("select id, date_of_order, order_details_id, customer_id, supplier_id, status from Orders where id=?",1).Scan(&order)
+    // data,_:= json.Marshal(&order)
+    // fmt.Fprint(w, string(data))
+    queryParams:= mux.Vars(r)
+    fmt.Println(queryParams["ordId"])
+    db.First(&order,queryParams["ordId"])
+    e:= json.NewEncoder(w).Encode(order)
+	if e != nil {
+		sendErr(w, http.StatusInternalServerError, err.Error())
+	}
 }
 func addCustomerOrder(w http.ResponseWriter, r *http.Request){
    w.Header().Set("Content-Type","application/json")
@@ -71,7 +79,23 @@ func addCustomerOrder(w http.ResponseWriter, r *http.Request){
     // fmt.Println("Hello")
 }
 func updateCustomerOrder(w http.ResponseWriter, r *http.Request){
-   
+    var order Orders
+    var updatedOrder Orders
+    queryParams:= mux.Vars(r)
+    ordId:=queryParams["ordId"]
+    db.First(&order,ordId)
+    json.NewDecoder(r.Body).Decode(&updatedOrder)
+    db.Model(&order).Where("order_id=?",ordId).Updates(&updatedOrder)
+    json.NewEncoder(w).Encode(&order)
+    
+}
+
+func delteCustomerOrder(w http.ResponseWriter , r * http.Request){
+    var order Orders
+    queryParams:= mux.Vars(r)
+    fmt.Println(queryParams["ordId"])
+    db.Delete(&order,queryParams["ordId"])
+    json.NewEncoder(w).Encode("Deletion successful")
 }
 
 // func handleRequests() {
