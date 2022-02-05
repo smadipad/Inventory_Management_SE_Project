@@ -13,13 +13,13 @@
 - Merged the functionality of supplier order retrieval API with the customer order retrieval API.
 
 ## UI demo
-
+ - [demo link ](https://youtu.be/1reyv-ckDNU)
 
 ## Back-end Demo
 
 
 ## Useful links for the projects.
-[link to repo:](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
-[Git Actions Link](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/issues)
+- [link to repo:](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
+- [Git Actions Link](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/issues)
 
 
