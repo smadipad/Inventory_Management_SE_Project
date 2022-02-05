@@ -16,7 +16,7 @@
  - [demo link ](https://youtu.be/1reyv-ckDNU)
 
 ## Back-end Demo
-
+- [demo link](https://youtu.be/7t3zbaAwJ1s)
 
 ## Useful links for the projects.
 - [link to repo:](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
