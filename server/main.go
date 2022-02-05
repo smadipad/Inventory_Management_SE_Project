@@ -12,7 +12,7 @@ func InitRouter(){
     router.HandleFunc("/customer/order/{ordId}", getCustomerOrderByID).Methods("GET")
     router.HandleFunc("/customer/orders/add", addCustomerOrder).Methods("POST")
     router.HandleFunc("/customer/orders/{ordId}", updateCustomerOrder).Methods("PUT")
-	router.HandleFunc("/customer/orders/{ordId}", updateCustomerOrder).Methods("DELETE")
+	router.HandleFunc("/customer/orders/{ordId}", deleteCustomerOrder).Methods("DELETE")
 	http.Handle("/",router)
 	log.Fatal(http.ListenAndServe(":8085", nil))
 }

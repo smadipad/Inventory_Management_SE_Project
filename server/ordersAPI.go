@@ -90,12 +90,13 @@ func updateCustomerOrder(w http.ResponseWriter, r *http.Request){
     
 }
 
-func delteCustomerOrder(w http.ResponseWriter , r * http.Request){
+func deleteCustomerOrder(w http.ResponseWriter , r * http.Request){
     var order Orders
     queryParams:= mux.Vars(r)
     fmt.Println(queryParams["ordId"])
+    //db.Raw("delete from Orders where order_id=?", queryParams["ordId"])
     db.Delete(&order,queryParams["ordId"])
-    json.NewEncoder(w).Encode("Deletion successful")
+    json.NewEncoder(w).Encode("{Status:200, Message: Deletion successful}")
 }
 
 // func handleRequests() {
