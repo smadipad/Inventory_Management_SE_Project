@@ -19,8 +19,7 @@
 
 
 ## Useful links for the projects.
-[link to repo:]()
-[Git discussions link] ()
-[Git Actions Link] ()
-[All User Stories Link] ()
+[link to repo:](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project)
+[Git Actions Link](https://github.com/Raviteja7Lanka/Inventory_Management_SE_Project/issues)
+
 
