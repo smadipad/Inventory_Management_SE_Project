@@ -15,10 +15,16 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -27,6 +33,11 @@ import { MatListModule } from '@angular/material/list';
     CustomerTableComponent,
     MyNavbarComponent,
     SupplierTableComponent,
+    HomeComponent,
+    SignupComponent,
+    LoginComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,9 @@ import { MatListModule } from '@angular/material/list';
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
+    FlexLayoutModule,
     MatIconModule,
+   
     MatCardModule,
     MatGridListModule,
     MatListModule,
