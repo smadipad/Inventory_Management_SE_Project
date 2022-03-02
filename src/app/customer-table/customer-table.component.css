@@ -18,10 +18,11 @@
   gap: 0.5rem;
 }
 
-table {
+.table {
   width: 70rem;
   border: 3px solid #000;
   font-size: 1.4rem;
+  background-color:blanchedalmond;
 }
 
 td.mat-column-star {
