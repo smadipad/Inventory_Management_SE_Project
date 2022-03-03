@@ -24,6 +24,7 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 
 
 
@@ -38,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     SignupComponent,
     LoginComponent,
+    ForgotPasswordComponent,
    
     
   ],

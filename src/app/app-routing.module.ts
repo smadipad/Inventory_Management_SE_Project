@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomerTableComponent } from './customer-table/customer-table.component';
 import { HomeComponent } from './home/home.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { MyNavbarComponent } from './my-navbar/my-navbar.component';
 import { SignupComponent } from './signup/signup.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: '',redirectTo: '/login',pathMatch: 'full'},
   { path:'login', component:LoginComponent},
   { path:'signup',component:SignupComponent},
+  { path:'forgot-password',component:ForgotPasswordComponent},
   {
     path:'',
     component:MyNavbarComponent,
