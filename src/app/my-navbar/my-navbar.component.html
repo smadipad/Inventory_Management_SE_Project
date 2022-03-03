@@ -7,6 +7,10 @@
     <mat-nav-list>
       <a mat-list-item routerLink="supplier-table">Supplier</a>
       <a mat-list-item routerLink="customer-table">Customer</a>
+      <a mat-list-item >Company</a>
+      <a mat-list-item routerLink="#">Settings</a>
+      <a mat-list-item routerLink="#">About</a>
+      
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,15 +29,17 @@
         <div class="spacer">
         
         </div>
-        <a mat-button href="http://localhost:4200/">Home</a>
-        <a mat-button>About</a>
-        <a mat-raised-button color="accent">Sign up</a>
+        <a mat-button routerLink="home" >Home</a>
+        <a mat-raised-button routerLink="/login" color="accent">Logout</a>
+        <!-- <a mat-button>About</a>
+        <a mat-raised-button color="accent">Sign up</a> -->
     </mat-toolbar>
     <!-- Add Content Here -->
+
     <router-outlet></router-outlet>
        
 <!-- <div fxLayout="row" fxLayoutAlign="space-around center" > -->
-  <mat-grid-list cols="4" >
+  <!-- <mat-grid-list cols="4" >
     <mat-grid-tile>
       
       <mat-card class="card">
@@ -76,7 +82,7 @@
         </mat-card-actions>
       </mat-card>  
     </mat-grid-tile>
-  </mat-grid-list>
+  </mat-grid-list> -->
     <!-- </div> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
