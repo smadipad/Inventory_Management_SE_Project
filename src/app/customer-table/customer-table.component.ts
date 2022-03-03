@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 @Component({
   selector: 'app-customer-table',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-table.component.css'],
 })
 export class CustomerTableComponent implements OnInit {
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
   displayedColumns = [
@@ -18,6 +20,12 @@ export class CustomerTableComponent implements OnInit {
     'fax',
     'otherDetails',
   ];
+
+  add_customer() {
+    this.dialog.open(AddCustomerComponent, {
+      width: '40%',
+    });
+  }
 
   datasource = customerData;
 }
