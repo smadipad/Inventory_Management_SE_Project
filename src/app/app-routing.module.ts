@@ -9,13 +9,20 @@ import { SupplierTableComponent } from './supplier-table/supplier-table.componen
 import { TabsComponent } from './tabs/tabs.component';
 
 const routes: Routes = [
-  { path: 'tabs', component: TabsComponent },
+  { path: '',redirectTo: '/login',pathMatch: 'full'},
   { path:'login', component:LoginComponent},
-  { path: 'my-navbar', component:MyNavbarComponent},
-  { path: 'supplier-table',component:SupplierTableComponent},
-  { path: 'customer-table',component:CustomerTableComponent},
-  { path: 'home',component:HomeComponent},
-  { path:'signup',component:SignupComponent}
+  { path:'signup',component:SignupComponent},
+  {
+    path:'',
+    component:MyNavbarComponent,
+    children:[
+       { path: 'tabs', component: TabsComponent },
+       { path: 'my-navbar', component:MyNavbarComponent},
+       { path: 'supplier-table',component:SupplierTableComponent},
+       { path: 'customer-table',component:CustomerTableComponent},
+       { path: 'home',component:HomeComponent}
+    ]
+  }
 ];
 
 @NgModule({
