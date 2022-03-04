@@ -16,18 +16,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddCustomerComponent } from './customer-table/add-customer/add-customer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AddSupplierComponent } from './supplier-table/add-supplier/add-supplier.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +43,8 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
     SignupComponent,
     LoginComponent,
     ForgotPasswordComponent,
-   
-    
+    AddCustomerComponent,
+    AddSupplierComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,11 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
     MatCardModule,
     MatGridListModule,
     MatListModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

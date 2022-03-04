@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AddSupplierComponent } from './add-supplier/add-supplier.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-supplier-table',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./supplier-table.component.css'],
 })
 export class SupplierTableComponent implements OnInit {
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
   displayedColumns = [
@@ -18,6 +20,12 @@ export class SupplierTableComponent implements OnInit {
     'fax',
     'otherDetails',
   ];
+
+  add_supplier() {
+    this.dialog.open(AddSupplierComponent, {
+      width: '40%',
+    });
+  }
 
   datasource = supplierData;
 }
